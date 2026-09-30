@@ -1,0 +1,91 @@
+:root {
+  --ink: #0d0f1c;
+  --panel: #161a2c;
+  --fog: #d8d5cb;
+  --mist: #8d90a6;
+  --lamp: #e0b45a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  line-height: 1.7;
+  margin: 0;
+  background-color: var(--ink);
+  color: var(--fog);
+}
+
+/* The header is the one memorable element: a spotlight in the dark */
+header {
+  text-align: center;
+  padding: 90px 20px 70px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(224, 180, 90, 0.22), transparent 65%);
+  border-bottom: 1px solid #262a40;
+  animation: reveal 1.6s ease-out both;
+}
+
+header h1 {
+  font-family: "Special Elite", "Courier New", monospace;
+  font-weight: normal;
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+  color: #f2eee2;
+  text-shadow: 0 0 24px rgba(224, 180, 90, 0.45);
+}
+
+header p {
+  margin: 0;
+  color: var(--mist);
+  font-style: italic;
+}
+
+main {
+  max-width: 680px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+article {
+  background: var(--panel);
+  border-left: 3px solid var(--lamp);
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+
+article h2 {
+  font-family: "Special Elite", "Courier New", monospace;
+  font-weight: normal;
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+  color: var(--lamp);
+}
+
+.date {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: var(--mist);
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--mist);
+  font-size: 14px;
+}
+
+@keyframes reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header { animation: none; }
+}
